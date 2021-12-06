@@ -12,12 +12,15 @@
       <th>On order</th>
       <th>Reorder level</th>
       <th>Discounted</th>
+      <th>Ukupna vrednost</th>
       <th span="2">Actions</th>
     </thead>
     <tr v-for="p in products" :key="p.productId">
       <Product
         :product="p"
+        :suppliers="suppliers"
         @deleteProduct="(id) => $emit('deleteProduct', id)"
+        @editProduct="newProductData => $emit('editProduct', newProductData)"
       />
     </tr>
   </table>
@@ -28,11 +31,9 @@ import Product from "./Product";
 
 export default {
   name: "App",
-  data() {
-    return {};
-  },
   props: {
     products: Array,
+    suppliers: Array,
   },
   components: {
     Product,
