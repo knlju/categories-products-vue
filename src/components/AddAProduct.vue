@@ -23,7 +23,6 @@
         </select>
       </td>
       <td>
-        <!-- <input type="text" v-model="productState.supplierId" /> -->
         <select v-model="productState.supplierId">
           <option v-for="s in suppliers" :value="s.supplierId" :key="s.supplierId">{{ s.companyName }}</option>
         </select>
@@ -86,12 +85,6 @@ export default {
         alert("please select a category!!")
         return
       }
-      // if(this.$categoryId === 0 || this.productName.trim() === ""){
-      //   console.log("validation failed")
-      //   return
-      // }
-      // const { categoryId, productName } = this
-      // this.$emit("addNewProduct", {categoryId, productName})
       this.$emit("addNewProduct", this.productState)
     },
   },

@@ -1,7 +1,6 @@
 <template>
   <td><input :class="[isEdit && 'editable']" type="text" v-model="productState.productName" :readonly=" !isEdit ? 'readonly' : false " /></td>
   <td>
-    <!-- <input :class="[isEdit && 'editable']" type="number" v-model="productState.supplierId" :readonly=" !isEdit ? 'readonly' : false " /> -->
     <select v-model="productState.supplierId" :disabled="!isEdit">
       <option v-for="s in suppliers" :value="s.supplierId" :key="s.supplierId">{{ s.companyName }}</option>
     </select>
@@ -34,8 +33,6 @@ export default {
     suppliers: Array
   },
   mounted() {
-    // console.log("Mounted Product")
-    // console.log(this.product)
     this.productState = {...this.product}
   },
   methods: {
@@ -61,23 +58,12 @@ export default {
         return
       }
 
-      // if(!this.productState.categoryId || this.productState.categoryId === 0) {
-      //   alert("please select a category!!")
-      //   return
-      // }
-
       this.isEdit = false
       this.$emit("editProduct", this.productState)
     }
   },
-  updated() {
-    // console.log("Product updated");
-    // console.log("this.productState", this.productState)
-  },
   computed: {
     Ukupno() {
-      // console.log("Ziv sam Ukupno")
-      // console.log("this.productState?.unitPrice * this.productState?.unitsInStock:", this.productState?.unitPrice * this.productState?.unitsInStock)
       return this.productState?.unitPrice * this.productState?.unitsInStock
     }
   },

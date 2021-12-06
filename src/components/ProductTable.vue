@@ -38,9 +38,6 @@ export default {
   components: {
     Product,
   },
-  updated() {
-    console.log("ProductTable updated");
-  },
 };
 </script>
 

@@ -46,11 +46,6 @@ export default {
   mounted: async function () {
     await this.FetchData();
   },
-  updated() {
-    // console.log("updated");
-    // console.log("this.categories", this.categories);
-    // console.log("this.selectedCategory", this.selectedCategory);
-  },
   methods: {
     async FetchData() {
       this.isLoading = true;
@@ -81,9 +76,6 @@ export default {
       this.selectedCategory = this.categories.find(
         (c) => c.categoryId === categoryId
       );
-    },
-    HandleEditClick() {
-      console.log("edit");
     },
     async DeleteProductByID(productId) {
       this.isLoading = true;
