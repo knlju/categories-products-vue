@@ -6,10 +6,10 @@
     </select>
   </td>
   <td><input :class="[isEdit && 'editable']" type="text" v-model="productState.quantityPerUnit" :readonly=" !isEdit ? 'readonly' : false " /></td>
-  <td><input :class="[isEdit && 'editable']" type="number" v-model="productState.unitPrice" :readonly=" !isEdit ? 'readonly' : false " /></td>
-  <td><input :class="[isEdit && 'editable']" type="number" v-model="productState.unitsInStock" :readonly=" !isEdit ? 'readonly' : false " /></td>
-  <td><input :class="[isEdit && 'editable']" type="number" v-model="productState.unitsOnOrder" :readonly=" !isEdit ? 'readonly' : false " /></td>
-  <td><input :class="[isEdit && 'editable']" type="number" v-model="productState.reorderLevel" :readonly=" !isEdit ? 'readonly' : false " /></td>
+  <td><input :class="[isEdit && 'editable']" type="number" v-model.number="productState.unitPrice" :readonly=" !isEdit ? 'readonly' : false " /></td>
+  <td><input :class="[isEdit && 'editable']" type="number" v-model.number="productState.unitsInStock" :readonly=" !isEdit ? 'readonly' : false " /></td>
+  <td><input :class="[isEdit && 'editable']" type="number" v-model.number="productState.unitsOnOrder" :readonly=" !isEdit ? 'readonly' : false " /></td>
+  <td><input :class="[isEdit && 'editable']" type="number" v-model.number="productState.reorderLevel" :readonly=" !isEdit ? 'readonly' : false " /></td>
   <td><input :class="[isEdit && 'editable']" type="checkbox" v-model="productState.discontinued" :disabled=" !isEdit ? true : false " /></td>
   <td><input type="text" :value="Ukupno" readonly="readonly" /></td>
   <td>

@@ -28,10 +28,10 @@
         </select>
       </td>
       <td><input type="text" v-model="productState.quantityPerUnit" /></td>
-      <td><input type="text" v-model="productState.unitPrice" /></td>
-      <td><input type="text" v-model="productState.unitsInStock" /></td>
-      <td><input type="text" v-model="productState.unitsOnOrder" /></td>
-      <td><input type="text" v-model="productState.reorderLevel" /></td>
+      <td><input type="number" v-model.number="productState.unitPrice" /></td>
+      <td><input type="number" v-model.number="productState.unitsInStock" /></td>
+      <td><input type="number" v-model.number="productState.unitsOnOrder" /></td>
+      <td><input type="number" v-model.number="productState.reorderLevel" /></td>
       <td><input type="checkbox" v-model="productState.discontinued" /></td>
       <td>
         <button @click="HandleAddNewProductClick">
@@ -86,6 +86,17 @@ export default {
         return
       }
       this.$emit("addNewProduct", this.productState)
+      this.productState = {
+        productName: "",
+        supplierId: null,
+        quantityPerUnit: "",
+        unitPrice: 0,
+        unitsInStock: 0,
+        unitsOnOrder: 0,
+        reorderLevel: 0,
+        discontinued: false,
+        categoryId: 0,
+      }
     },
   },
 };
